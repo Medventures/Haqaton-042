@@ -1,0 +1,37 @@
+name: Backend and API contract
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: backend/requirements-dev.lock
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: pip install -r backend/requirements-dev.lock
+      - run: python -m ruff check backend scripts
+      - run: python -m ruff format --check backend scripts
+      - run: python -m pytest -q
+        working-directory: backend
+      - run: python scripts/export_contracts.py
+      - run: npm ci
+      - run: npm run contracts:types
+      - run: npm run contracts:check
+      - run: npm --prefix frontend ci
+      - run: npm --prefix frontend run build
+      - run: git diff --exit-code -- contracts
+      - run: docker compose config --quiet
+      - run: docker compose build backend

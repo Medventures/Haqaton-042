@@ -1,0 +1,101 @@
+name: medhub
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: medhub
+      POSTGRES_USER: medhub
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes: ["mis-demo-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medhub -d medhub"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+  transcription:
+    build: ./transcription
+    ports: ["127.0.0.1:8003:8000"]
+    environment:
+      TRANSCRIPTION_API_KEY: ${TRANSCRIPTION_API_KEY:?Set TRANSCRIPTION_API_KEY in .env}
+      WHISPER_MODEL: ${WHISPER_MODEL:-large-v3}
+      HF_TOKEN: ${HF_TOKEN:-}
+      DEVICE: cpu
+      COMPUTE_TYPE: int8
+      BATCH_SIZE: "1"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    volumes:
+      - ${MODEL_CACHE_DIR:-./model-cache}:/models
+    tmpfs:
+      - /data:uid=10001,gid=10001,mode=0700
+      - /tmp
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5)"]
+      interval: 15s
+      timeout: 10s
+      retries: 12
+      start_period: 60s
+    restart: unless-stopped
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports: ["127.0.0.1:8002:8000"]
+    environment:
+      MEDHUB_DEMO_ENABLED: "true"
+      MEDHUB_DATA_DIR: /app/data
+      MEDHUB_DATABASE_URL: postgresql://medhub:${POSTGRES_PASSWORD}@db:5432/medhub
+      MEDHUB_WHISPERX_BASE_URL: http://transcription:8000
+      MEDHUB_WHISPERX_PROTOCOL: jobs
+      MEDHUB_WHISPERX_API_TOKEN: ${TRANSCRIPTION_API_KEY}
+      MEDHUB_SPEECH_CACHE_ENABLED: "false"
+      MEDHUB_DEMO_LIBRARY_ENABLED: "true"
+      MEDHUB_PERSIST_WORKSPACES: "false"
+      MEDHUB_MIS_BASE_URL: http://mock-mis:8000
+      MIS_API_KEY: ${MIS_API_KEY:?Set a separate MIS_API_KEY in .env}
+      MEDHUB_WORKSPACE_TTL_SECONDS: "86400"
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4.1-mini}
+    volumes:
+      - ./demo-seed:/seed:ro
+    tmpfs:
+      - /app/data:mode=1777
+      - /tmp
+    depends_on:
+      db: {condition: service_healthy}
+      transcription: {condition: service_healthy}
+      mock-mis: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health', timeout=5)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+  mock-mis:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    command: ["python", "-m", "uvicorn", "app.mock_mis:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]
+    environment:
+      MIS_API_KEY: ${MIS_API_KEY:?Set a separate MIS_API_KEY in .env}
+      MIS_DATABASE_URL: postgresql://medhub:${POSTGRES_PASSWORD}@db:5432/medhub
+    ports: ["127.0.0.1:8005:8000"]
+    depends_on:
+      db: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports: ["127.0.0.1:5174:80"]
+    depends_on:
+      backend: {condition: service_healthy}
+    restart: unless-stopped
+volumes:
+  mis-demo-data:

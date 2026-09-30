@@ -1,0 +1,56 @@
+{
+  "id": "00000000-0000-4000-8000-000000000001",
+  "patient_id": "demo-patient-001",
+  "language": "ru",
+  "status": "review",
+  "revision": 2,
+  "confirmed_revision": null,
+  "source": "demo",
+  "fields": {
+    "complaints": "Температура, сухой кашель.",
+    "anamnesis": "Симптомы в течение трёх дней.",
+    "allergies": "Со слов пациента: аллергия на пенициллин.",
+    "diagnosis": null,
+    "prescriptions": null,
+    "recommendations": null
+  },
+  "transcript": {
+    "language": "ru",
+    "segments": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "end": 2.0,
+        "speaker": "doctor",
+        "text": "Что вас беспокоит?"
+      },
+      {
+        "id": "s2",
+        "start": 2.0,
+        "end": 7.0,
+        "speaker": "patient",
+        "text": "Три дня температура и сухой кашель."
+      },
+      {
+        "id": "s3",
+        "start": 7.0,
+        "end": 9.0,
+        "speaker": "doctor",
+        "text": "Есть аллергия на лекарства?"
+      },
+      {
+        "id": "s4",
+        "start": 9.0,
+        "end": 12.0,
+        "speaker": "patient",
+        "text": "На пенициллин."
+      }
+    ]
+  },
+  "warnings": [
+    "Синтетический пример; WhisperX и LLM не вызывались."
+  ],
+  "export_receipt": null,
+  "created_at": "2026-09-30T00:00:00Z",
+  "updated_at": "2026-09-30T00:00:00Z"
+}

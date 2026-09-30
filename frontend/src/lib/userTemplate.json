@@ -1,0 +1,670 @@
+[
+  {
+    "runs": [
+      {
+        "text": "Осмотр терапевта",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      },
+      {
+        "text": "/ВОП",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      },
+      {
+        "text": " на приеме",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "center",
+    "after": 0.0
+  },
+  {
+    "runs": [],
+    "align": "center",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "Жалобы: {{complaints}}",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "А",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      },
+      {
+        "text": "намнез заболевания:",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "{{illness_history}}",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Анамнез жизни",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      },
+      {
+        "text": ":",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Перенесенные заболевания: {{life_history}}",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Гинекологический анамнез: {{gynecological_history}}\nЛекарственная непереносимость / аллергии: {{allergies}}",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Полный сбор анамнеза при подозрении на анемию, для верификации причины:\n{{anemia_history}}",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Была ли анемия раньше? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Проводилось ли лечение препаратами железа?",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": " Был ли эффект от терапии?",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": " Ели или ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      },
+      {
+        "text": "хотели",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      },
+      {
+        "text": " есть в детстве/ во время беременности землю, глину, песок, уголь, мел? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Было ли в детстве ночное недержание мочи (у девочки)? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Есть ли анемия у Вашей матери?",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": " Если есть, то какая? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Каким по счету ребенком у своей матери Вы родились?",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": " Если не первым, то какая разница в возрасте между Вами и старшими братьями/сестрами?",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": " Сколько дней продолжаются месячные? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Их интенсивность? (количество прокладок и тампонов, которые необходимо сменить в течение дня, нужно ли менять гигиенические средства ночью, есть ли сгустки). ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Интервал между ними? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Сколько было родов? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Какой между ними интервал? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Было ли ГВ, как долго? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Есть ли кровоточивость десен при откусывании пищи, чистке зубов? Как часто?",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": " Бывают ли носовые кровотечения? Как часто? Сколько лет? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Была ли ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      },
+      {
+        "text": "кровохарканья? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Не являетесь ли Вы донором? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "когда-нибудь рвота кофейной гущей",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      },
+      {
+        "text": " ,",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      },
+      {
+        "text": " черный стул? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Замечали ли кровь в кале? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Бывает ли кровавая или черная моча? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Не было ли ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Принимали ли Вы аспирин или другие нестероидные противовоспалительные препараты? ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Соблюдаете ли Вы какую-либо диету?",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Эпидемиологический анамнез",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "{{epidemiological_history}}",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0
+  },
+  {
+    "runs": [
+      {
+        "text": "Status praesens: {{objective_status}}",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "Лабораторная диагностика: ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "{{laboratory_results}}",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": " ",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "Диагноз Основной: {{diagnosis}}",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "Рекомендации: {{recommendations}}",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "План обследования: {{examination_plan}}",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "Препарат / лечение: {{treatment}}",
+        "bold": false,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "Врач: {{doctor}}",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  },
+  {
+    "runs": [
+      {
+        "text": "Дата: {{date}}",
+        "bold": true,
+        "italic": false,
+        "font": "Times New Roman",
+        "size": 12.0
+      }
+    ],
+    "align": "left",
+    "after": 0.0
+  }
+]

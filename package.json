@@ -1,0 +1,14 @@
+{
+  "name": "medhub-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "API contract tooling only; frontend lives in frontend/",
+  "scripts": {
+    "contracts:types": "openapi-typescript contracts/openapi.json -o contracts/api.d.ts",
+    "contracts:check": "tsc --noEmit -p contracts/tsconfig.json"
+  },
+  "devDependencies": {
+    "openapi-typescript": "7.9.1",
+    "typescript": "5.9.3"
+  }
+}

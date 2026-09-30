@@ -1,0 +1,11 @@
+**/node_modules
+**/__pycache__
+**/.env
+**/.local-api-key
+**/data
+**/models
+**/dist
+.git
+
+demo-seed
+model-cache
